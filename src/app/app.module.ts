@@ -20,6 +20,7 @@ import { EmisionComprobantesComponent } from './pages/Finanzas/emision-comproban
 import { GeneracionReportesComponent } from './pages/Reportes/generacion-reportes/generacion-reportes.component';
 import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/sistema-confg.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PantallaPrincipalComponent } from './pages/Autentificacion/pantalla-principal/pantalla-principal.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     GeneracionReportesComponent,
     SistemaConfgComponent,
     DashboardComponent,
+    PantallaPrincipalComponent,
   ],
   imports: [
     BrowserModule,
