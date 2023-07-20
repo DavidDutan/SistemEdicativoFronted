@@ -21,6 +21,11 @@ import { GeneracionReportesComponent } from './pages/Reportes/generacion-reporte
 import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/sistema-confg.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PantallaPrincipalComponent } from './pages/Autentificacion/pantalla-principal/pantalla-principal.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -43,9 +48,12 @@ import { PantallaPrincipalComponent } from './pages/Autentificacion/pantalla-pri
     SistemaConfgComponent,
     DashboardComponent,
     PantallaPrincipalComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
+    MatToolbarModule,
+    MatButtonModule,
     AppRoutingModule
   ],
   providers: [],
