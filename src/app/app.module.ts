@@ -19,6 +19,7 @@ import { RegistroIEComponent } from './pages/Finanzas/registro-ie/registro-ie.co
 import { EmisionComprobantesComponent } from './pages/Finanzas/emision-comprobantes/emision-comprobantes.component';
 import { GeneracionReportesComponent } from './pages/Reportes/generacion-reportes/generacion-reportes.component';
 import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/sistema-confg.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/siste
     RegistroIEComponent,
     EmisionComprobantesComponent,
     GeneracionReportesComponent,
-    SistemaConfgComponent
+    SistemaConfgComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
