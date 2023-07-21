@@ -30,12 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/ionicons/dist/css/ionicons.min.css"
-            ],
-            "scripts": [
-              
-            ]
+              "src/styles.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {

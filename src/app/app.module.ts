@@ -57,7 +57,6 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule
   ],
   providers: [], 
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
