@@ -25,7 +25,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table'
 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     MatToolbarModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    MatTableModule
   ],
   providers: [], 
   bootstrap: [AppComponent]
