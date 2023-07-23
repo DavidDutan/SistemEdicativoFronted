@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { DashboardService } from 'src/app/service/components/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  isSidebarHidden: boolean = false;
+
+  constructor(private dashboardService: DashboardService) { }
+
+  showComponent(componentName: string): void {
+    this.dashboardService.showComponent(componentName);
+  }
 }

@@ -1,5 +1,5 @@
 nav {
-	height: 56px;
+	height: 60px;
 	background: var(--light);
 	padding: 0 24px;
 	display: flex;
@@ -27,41 +27,6 @@ nav a {
 nav .bx.bx-menu {
 	cursor: pointer;
 	color: var(--dark);
-}
-
-nav .profile img {
-	width: 36px;
-	height: 36px;
-	object-fit: cover;
-	border-radius: 50%;
-}
-
-button {
-	width: 80px;
-	height: 25px;
-	position: relative;
-	overflow: hidden;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
-	background: var(--light);
-}
-
-button::before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background-color: var(--dark-grey);
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.3s ease;
-}
-
-button:hover::before {
-	transform: scaleX(1);
 }
 
 .example-spacer {
