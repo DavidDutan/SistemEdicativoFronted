@@ -7,9 +7,7 @@ import { DashboardService } from 'src/app/service/components/dashboard.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-
-  isSidebarHidden: boolean = false;
-
+  
   constructor(private dashboardService: DashboardService) { }
 
   showComponent(componentName: string): void {
