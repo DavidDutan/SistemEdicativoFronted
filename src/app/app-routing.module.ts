@@ -9,7 +9,7 @@ import { GestionEstudiantesComponent } from './pages/Inscripciones/gestion-estud
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
-  {path: "inicio", component: PantallaPrincipalComponent},
+  {path: "", component: PantallaPrincipalComponent},
   {path: "administrador", component: AdministracionUsuariosComponent, 
          children:[
           {path: "gestion-estudiantes", component: GestionEstudiantesComponent},
