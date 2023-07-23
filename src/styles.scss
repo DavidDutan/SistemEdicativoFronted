@@ -111,7 +111,7 @@ body {
     width: 100%;
 }
 
-#content-data main {
+#content-data {
 	width: 100%;
 	padding: 36px 24px;
 	font-family: var(--poppins);
@@ -119,7 +119,7 @@ body {
 	overflow-y: auto;
 }
 
-#content-data main .table-data {
+#content-data .table-data {
 	display: flex;
 	flex-wrap: wrap;
 	grid-gap: 24px;
@@ -128,70 +128,70 @@ body {
 	color: var(--dark);
 }
 
-#content-data main .table-data > div {
+#content-data .table-data > div {
 	border-radius: 20px;
 	background: var(--light);
 	padding: 24px;
 	overflow-x: auto;
 }
 
-#content-data main .table-data .head {
+#content-data .table-data .head {
 	display: flex;
 	align-items: center;
 	grid-gap: 16px;
 	margin-bottom: 24px;
 }
 
-#content-data main .table-data .head h3 {
+#content-data .table-data .head h3 {
 	margin-right: auto;
 	font-size: 24px;
 	font-weight: 600;
 }
 
-#content-data main .table-data .head .bx {
+#content-data .table-data .head .bx {
 	cursor: pointer;
 }
 
-#content-data main .table-data .order {
+#content-data .table-data .order {
 	flex-grow: 1;
 	flex-basis: 500px;
 }
 
-#content-data main .table-data .order table {
+#content-data .table-data .order table {
 	width: 100%;
 	border-collapse: collapse;
 }
 
-#content-data main .table-data .order table th {
+#content-data .table-data .order table th {
 	padding-bottom: 12px;
 	font-size: 13px;
 	text-align: left;
 	border-bottom: 1px solid var(--grey);
 }
 
-#content-data main .table-data .order table td {
+#content-data .table-data .order table td {
 	padding: 16px 0;
 }
 
-#content-data main .table-data .order table tr td:first-child {
+#content-data .table-data .order table tr td:first-child {
 	display: flex;
 	align-items: center;
 	grid-gap: 12px;
 	padding-left: 6px;
 }
 
-#content-data main .table-data .order table td img {
+#content-data .table-data .order table td img {
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
 	object-fit: cover;
 }
 
-#content-data main .table-data .order table tbody tr:hover {
+#content-data .table-data .order table tbody tr:hover {
 	background: var(--grey);
 }
 
-#content-data main .table-data .order table tr td .status {
+#content-data .table-data .order table tr td .status {
 	font-size: 10px;
 	padding: 6px 16px;
 	color: var(--light);
@@ -199,18 +199,67 @@ body {
 	font-weight: 700;
 }
 
-#content-data main .table-data .order table tr td .status.completed {
+#content-data .table-data .order table tr td .status.completed {
 	background: var(--blue);
 }
 
-#content-data main .table-data .order table tr td .status.process {
+#content-data .table-data .order table tr td .status.process {
 	background: var(--yellow);
 }
 
-#content-data main .table-data .order table tr td .status.pending {
+#content-data .table-data .order table tr td .status.pending {
 	background: var(--orange);
 }
 
+//Formulario
+.form-container {
+	display: flex;
+	justify-content: space-between;
+	background: var(--light); /* Color de fondo del formulario */
+	padding: 24px;
+	border-radius: 20px;
+	max-width: 800px;
+	margin: 0 auto;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+  }
+  
+  .form-left,
+  .form-right {
+	flex: 1;
+	padding: 0 12px;
+  }
+  
+  .form-container form div {
+	margin-bottom: 16px;
+  }
+  
+  .form-container form label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 4px;
+  }
+  
+  .form-container form input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+  }
+  
+  .form-right div:last-child {
+	margin-bottom: 0;
+  }
+  
+  .btn-guardar {
+	background-color: var(--blue); /* Color del botón */
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-top: 16px;
+  }
 
 @media screen and (max-width: 768px) {
 	#sidebar {

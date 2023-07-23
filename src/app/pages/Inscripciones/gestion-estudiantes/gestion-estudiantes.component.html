@@ -1,37 +1,41 @@
-<section id="content-data">
-    <main>  
-        <!--Agregar un formulario para insertar en la base de datos con algo parecido al  [(ngModel)]="producto.precioUnitario"-->
-        <form (ngSubmit)="guardar()">
-            <div>
-              <label for="nombre">Nombre:</label>
-              <input id="nombre" type="text" [(ngModel)]="estudiante.usuNombre" name="nombre">
+<section id="content-data"> 
+        <div class="form-container">
+            <div class="form-left">
+              <form (ngSubmit)="guardar()">
+                <div>
+                  <label for="nombre">Nombre:</label>
+                  <input id="nombre" type="text" [(ngModel)]="estudiante.usuNombre" name="nombre">
+                </div>
+                <div>
+                  <label for="apellido">Apellido:</label>
+                  <input id="apellido" type="text" [(ngModel)]="estudiante.usuApellido" name="apellido">
+                </div>
+                <div>
+                  <label for="correo">Correo:</label>
+                  <input id="correo" type="email" [(ngModel)]="estudiante.usuCorreo" name="correo">
+                </div>
+                <div>
+                    <label for="id">Contraseña:</label>
+                    <input id="id" type="password" [(ngModel)]="estudiante.usuPassword" name="password">
+                </div>
+              </form>
             </div>
-            <div>
-              <label for="apellido">Apellido:</label>
-              <input id="apellido" type="text" [(ngModel)]="estudiante.usuApellido" name="apellido">
+            <div class="form-right">
+              <div>
+                <label for="cedula">Cédula:</label>
+                <input id="cedula" type="text" [(ngModel)]="estudiante.usuCedula" name="cedula">
+              </div>
+              <div>
+                <label for="perfil">Perfil de Acceso:</label>
+                <input id="perfil" type="text" [(ngModel)]="estudiante.usuPerfilAcceso" name="perfil">
+              </div>
+              <div>
+                <label for="grado">Grado Académico:</label>
+                <input id="grado" type="text" [(ngModel)]="estudiante.estGradoAcademico" name="grado">
+              </div>
             </div>
-            <div>
-              <label for="correo">Correo:</label>
-              <input id="correo" type="email" [(ngModel)]="estudiante.usuCorreo" name="correo">
-            </div>
-            <div>
-              <label for="cedula">Cédula:</label>
-              <input id="cedula" type="text" [(ngModel)]="estudiante.usuCedula" name="cedula">
-            </div>
-            <div>
-              <label for="perfil">Perfil de Acceso:</label>
-              <input id="perfil" type="text" [(ngModel)]="estudiante.usuPerfilAcceso" name="perfil">
-            </div>
-            <div>
-              <label for="grado">Grado Académico:</label>
-              <input id="grado" type="text" [(ngModel)]="estudiante.estGradoAcademico" name="grado">
-            </div>
-            <div>
-              <label for="id">ID Estudiante:</label>
-              <input id="id" type="text" [(ngModel)]="estudiante.usuId" name="id">
-            </div>
-            <button type="submit">Guardar</button>
-          </form>
+          </div>
+          <button class="btn-guardar" (click)="guardar()">Guardar</button>
 
         <div class="table-data">
             <div class="order">
@@ -64,5 +68,4 @@
                 </table>
             </div>
         </div>
-    </main>
 </section>
