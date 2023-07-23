@@ -1,5 +1,5 @@
 <app-dashboard></app-dashboard>
-<section id="content">
+<section id="content" [style.left.px]="isSidebarHidden ? 60 : 280" [style.width.px]="isSidebarHidden ? 'calc(100% - 60px)' : 'calc(100% - 280px)'">
     <main>
         <app-gestion-docentes *ngIf="componentToShow === 'gestion-docentes'"></app-gestion-docentes>
         <app-gestion-estudiantes *ngIf="componentToShow === 'gestion-estudiantes'"></app-gestion-estudiantes>

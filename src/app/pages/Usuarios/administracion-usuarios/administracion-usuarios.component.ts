@@ -10,15 +10,24 @@ import { DashboardService } from 'src/app/service/components/dashboard.service';
 export class AdministracionUsuariosComponent implements OnDestroy {
 
   componentToShow: string = '';
-  private sub: Subscription;
+  isSidebarHidden: boolean = false;
+  
+  private subs: Subscription[] = [];
 
   constructor(private dashboardService: DashboardService) {
-    this.sub = this.dashboardService.componentToShow$.subscribe(componentName => {
-      this.componentToShow = componentName;
-    });
+    this.subs.push(
+      this.dashboardService.componentToShow$.subscribe(componentName => {
+        this.componentToShow = componentName;
+      }),
+      
+      // Se agrega la suscripción al estado del sidebar
+      this.dashboardService.sidebarState$.subscribe((isHidden) => {
+        this.isSidebarHidden = isHidden;
+      })
+    );
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    this.subs.forEach(sub => sub.unsubscribe());
   }
 }

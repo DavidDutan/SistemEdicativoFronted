@@ -1,16 +1,16 @@
-<section id="sidebar">
+<section id="sidebar" [ngClass]="{'hide': isSidebarHidden}">
     <a class="brand">
         <i class='bx bx-menu'></i>
         <span class="text">Administrador</span>
     </a>
     <ul class="side-menu top">
-        <li>
+        <li [ngClass]="{'active': activeLink === 'gestion-estudiantes'}">
             <a (click)="showComponent('gestion-estudiantes')">
                 <i class='bx bxs-shopping-bag-alt' ></i>
                 <span class="text">Estudiantes</span>
             </a>
         </li>
-        <li>
+        <li [ngClass]="{'active': activeLink === 'gestion-docentes'}">
             <a (click)="showComponent('gestion-docentes')">
                 <i class='bx bxs-doughnut-chart' ></i>
                 <span class="text">Docentes</span>
@@ -31,7 +31,7 @@
     </ul>
     <ul class="side-menu">
         <li>
-            <a>
+            <a >
                 <i class='bx bxs-cog' ></i>
                 <span class="text">Configuracion</span>
             </a>
