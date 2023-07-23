@@ -5,33 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="inicio-sesion.component.scss" />
-    <script src="main.js"></script>
+    <script src="inicio-sesion.component.ts"></script>
   </head>
   <body>
     <header>
-      <h2 class="logo">Logo</h2>
+      <h2 class="logo">IA School</h2>
       <nav class="navigation">
-        <a href="#">Inicio</a>
-        <button class="btnLogin-popup">Login</button>
+        <a href="#">Principal</a>
+        <button class="btnLogin-popup">Inicio</button>
       </nav>
     </header>
 
     <div class="wrapper">
+      <span class="icon-close"> <i class="bi bi-x"></i> </span>
+
       <div class="form-box login">
-        <h2>Login</h2>
+        <h2>Inicio</h2>
         <form action="#">
           <div class="input-box">
-            <span class="icon"><i class="bi bi-envelope-fill"></i></span>
-            <input type="email" required />
-            <label>Email</label>
+            <span class="icon">
+              <i class="bi bi-envelope-fill"></i>
+            </span>
+            <input type="text" required />
+            <label>Correo</label>
           </div>
           <div class="input-box">
-            <span class="icon"
-              ><i class="bi bi-person-fill-lock"></i>
+            <span class="icon">
+              <i class="bi bi-person-fill-lock"></i>
             </span>
             <input type="password" required />
-            <label>Password</label>
+            <label>Contraseña</label>
           </div>
+          <div class="remember-forgot">
+            <label
+              ><input type="checkbox" />
+              Remember me
+            </label>
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn">Iniciar</button>
         </form>
       </div>
     </div>
