@@ -1,4 +1,4 @@
-export class Estudiante {
+export class Empleado {
     usuId?: BigInt;
     usuNombre?: string;
     usuApellido?: string;
