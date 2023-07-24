@@ -1,8 +1,21 @@
 <app-dashboard></app-dashboard>
-<section id="content" [style.left.px]="isSidebarHidden ? 60 : 280"
-    [style.width.px]="isSidebarHidden ? 'calc(100% - 60px)' : 'calc(100% - 280px)'">
-    <app-gestion-docentes *ngIf="componentToShow === 'gestion-docentes'"></app-gestion-docentes>
-    <app-gestion-estudiantes *ngIf="componentToShow === 'gestion-estudiantes'"></app-gestion-estudiantes>
-    <app-gestion-grupos *ngIf="componentToShow === 'gestion-grupos'"></app-gestion-grupos>
-    <app-gestion-matriculas *ngIf="componentToShow === 'gestion-matriculas'"></app-gestion-matriculas>
+<section
+  id="content"
+  [style.left.px]="isSidebarHidden ? 60 : 280"
+  [style.width.px]="
+    isSidebarHidden ? 'calc(100% - 60px)' : 'calc(100% - 280px)'
+  "
+>
+  <app-gestion-docentes
+    *ngIf="componentToShow === 'gestion-docentes'"
+  ></app-gestion-docentes>
+  <app-gestion-estudiantes
+    *ngIf="componentToShow === 'gestion-estudiantes'"
+  ></app-gestion-estudiantes>
+  <app-gestion-grupos
+    *ngIf="componentToShow === 'gestion-grupos'"
+  ></app-gestion-grupos>
+  <app-gestion-matriculas
+    *ngIf="componentToShow === 'gestion-matriculas'"
+  ></app-gestion-matriculas>
 </section>
