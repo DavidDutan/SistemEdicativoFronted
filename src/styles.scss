@@ -213,53 +213,79 @@ body {
 
 //Formulario
 .form-container {
-	display: flex;
-	justify-content: space-between;
-	background: var(--light); /* Color de fondo del formulario */
-	padding: 24px;
-	border-radius: 20px;
-	max-width: 800px;
-	margin: 0 auto;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
-  }
-  
-  .form-left,
-  .form-right {
-	flex: 1;
-	padding: 0 12px;
-  }
-  
-  .form-container form div {
-	margin-bottom: 16px;
-  }
-  
-  .form-container form label {
-	display: block;
-	font-weight: bold;
-	margin-bottom: 4px;
-  }
-  
-  .form-container form input {
-	width: 100%;
-	padding: 8px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-  }
-  
-  .form-right div:last-child {
-	margin-bottom: 0;
-  }
-  
-  .btn-guardar {
-	background-color: var(--blue); /* Color del botón */
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	font-weight: bold;
-	margin-top: 16px;
-  }
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--light);
+    border-radius: 20px;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    padding: 0 12px;
+    box-sizing: border-box;
+    background-color: var(--light);
+}
+
+.form-left input, .form-right input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--light);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.form-left input:focus, .form-right input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.btn-guardar {
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-editar, .btn-eliminar {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn-editar:hover, .btn-eliminar:hover {
+    opacity: 0.8;
+}
+
+.btn-editar:active, .btn-eliminar:active {
+    opacity: 0.6;
+}
+
+.btn-editar:focus, .btn-eliminar:focus {
+    outline: none;
+}
+
+.btn-editar {
+    background-color: #3498db;
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+}
+
 
 @media screen and (max-width: 768px) {
 	#sidebar {

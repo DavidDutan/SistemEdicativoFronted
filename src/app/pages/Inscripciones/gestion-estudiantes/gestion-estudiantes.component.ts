@@ -46,5 +46,11 @@ export class GestionEstudiantesComponent {
 
   limpiar(){
     this.estudiante.usuNombre="";
+    this.estudiante.usuApellido="";
+    this.estudiante.usuCedula="";
+    this.estudiante.usuCorreo="";
+    this.estudiante.usuPerfilAcceso="";  
+    this.estudiante.usuPassword=""; 
+    this.estudiante.estGradoAcademico=""; 
   }
 }
