@@ -32,17 +32,15 @@ export class InicioSesionComponent implements OnInit {
 
   login(): void {
     this.usuarioService.Autentificacion(this.usuario).subscribe(
-      (perfilAcceso) => {
-        
-        console.log(perfilAcceso);
-        switch (perfilAcceso) {
+      (response) => {
+        switch (response.perfilAcceso) {
           case 'Ad':
             this.router.navigate(['/administrador']);
             break;
           case 'Es':
             this.router.navigate(['/estudiante']);
             break;
-          }
+        }
       },
       (error) => {
         this.error = error.message;

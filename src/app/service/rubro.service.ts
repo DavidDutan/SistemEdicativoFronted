@@ -11,10 +11,10 @@ export class RubroService {
   constructor(private http: HttpClient) { }
 
   save (rubro: RubroDeCobro): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', rubro)
+      return this.http.post<any>('http://localhost:8080/rubroCobro/registrar', rubro)
   }
 
   getAllEstudiantes(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/rubroCobro/listar')
   }
 }

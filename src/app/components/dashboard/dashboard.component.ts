@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.perfilAccesoSub.unsubscribe();
     }
   }
-
+  
   showComponent(componentName: string): void {
     this.dashboardService.showComponent(componentName);
     this.activeLink = componentName;

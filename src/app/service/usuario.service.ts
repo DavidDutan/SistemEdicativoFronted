@@ -13,7 +13,7 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  Autentificacion(usuario: Usuario): Observable<string> {
+  Autentificacion(usuario: Usuario): Observable<{perfilAcceso: string}> {
     let params = new HttpParams();
     if (usuario.usuCorreo) {
       params = params.set('usuCorreo', usuario.usuCorreo);
@@ -21,13 +21,10 @@ export class UsuarioService {
     if (usuario.usuPassword) {
       params = params.set('usuPassword', usuario.usuPassword);
     }
-    return this.http.get<string>('http://localhost:8080/usuarios/login', {
+    return this.http.get<{perfilAcceso: string}>('http://localhost:8080/usuarios/login', {
       params,
     }).pipe(
-      tap(res => {
-        console.log(res)
-        this._perfilAcceso.next(res);
-      })
-    );
+      tap(response => this._perfilAcceso.next(response.perfilAcceso)) 
+    );;
   }
 }
