@@ -14,7 +14,7 @@ export class CalificacionService {
       return this.http.post<any>('http://localhost:8080/usuario/registrar', calificacion)
   }
 
-  getAllEstudiantes(): Observable<any[]>{
+  getAllCalificaciones(): Observable<any[]>{
     return this.http.get<any>('http://localhost:8080/usuario/listar')
   }
 }
