@@ -14,7 +14,7 @@ export class AsignaturaService {
       return this.http.post<any>('http://localhost:8080/usuario/registrar', asignatura)
   }
 
-  getAllEstudiantes(): Observable<any[]>{
+  getAllAsignaturas(): Observable<any[]>{
     return this.http.get<any>('http://localhost:8080/usuario/listar')
   }
 }
