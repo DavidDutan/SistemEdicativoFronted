@@ -4,49 +4,49 @@
     <span class="text">Administrador</span>
   </a>
   <ul class="side-menu top">
-    <li [ngClass]="{ active: activeLink === 'gestion-estudiantes' }">
+    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-estudiantes' }">
       <a (click)="showComponent('gestion-estudiantes')">
         <i class="bx bxs-shopping-bag-alt"></i>
         <span class="text">Estudiantes</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'gestion-docentes' }">
+    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-docentes' }">
       <a (click)="showComponent('gestion-docentes')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Docentes</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'gestion-grupos' }">
+    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-grupos' }">
       <a (click)="showComponent('gestion-grupos')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Grupos</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'gestion-matriculas' }">
+    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-matriculas' }">
       <a (click)="showComponent('gestion-matriculas')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Matriculas</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'gestion-asignaturas' }">
+    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-asignaturas' }">
       <a (click)="showComponent('gestion-asignaturas')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Asignaturas</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'registro-horarios' }">
+    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'registro-horarios' }">
       <a (click)="showComponent('registro-horarios')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Horarios</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'consulta-calificaciones' }">
+    <li *ngIf="perfilAcceso === 'Es'" [ngClass]="{ active: activeLink === 'consulta-calificaciones' }">
       <a (click)="showComponent('consulta-calificaciones')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Calificaciones</span>
       </a>
     </li>
-    <li [ngClass]="{ active: activeLink === 'consulta-certificados' }">
+    <li *ngIf="perfilAcceso === 'Es'" [ngClass]="{ active: activeLink === 'consulta-certificados' }">
       <a (click)="showComponent('consulta-certificados')">
         <i class="bx bxs-doughnut-chart"></i>
         <span class="text">Certificados</span>

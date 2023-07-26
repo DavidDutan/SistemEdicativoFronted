@@ -11,10 +11,10 @@ export class CalificacionService {
   constructor(private http: HttpClient) { }
 
   save (calificacion: Calificacion): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', calificacion)
+      return this.http.post<any>('http://localhost:8080/calificacion/registrar', calificacion)
   }
 
   getAllCalificaciones(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/calificacion/listar')
   }
 }

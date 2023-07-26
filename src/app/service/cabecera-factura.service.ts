@@ -11,10 +11,10 @@ export class CabeceraFacturaService {
   constructor(private http: HttpClient) { }
 
   save (cabfactura: CabeceraFactura): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', cabfactura)
+      return this.http.post<any>('http://localhost:8080/cabeceraFactura/registrar', cabfactura)
   }
 
   getAllEstudiantes(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/cabeceraFactura/listar')
   }
 }
