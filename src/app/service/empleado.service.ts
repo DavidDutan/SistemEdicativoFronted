@@ -11,10 +11,10 @@ export class EmpleadoService {
   constructor(private http: HttpClient) { }
 
   save (empleado: Empleado): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', empleado)
+      return this.http.post<any>('http://localhost:8080/empleados/registrar', empleado)
   }
 
   getAllEmpleados(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/empleados/listar')
   }
 }
