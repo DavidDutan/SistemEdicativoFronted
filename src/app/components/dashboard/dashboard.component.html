@@ -16,16 +16,40 @@
         <span class="text">Docentes</span>
       </a>
     </li>
-    <li>
-      <a>
-        <i class="bx bxs-message-dots"></i>
-        <span class="text">Message</span>
+    <li [ngClass]="{ active: activeLink === 'gestion-grupos' }">
+      <a (click)="showComponent('gestion-grupos')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Grupos</span>
       </a>
     </li>
-    <li>
-      <a>
-        <i class="bx bxs-group"></i>
-        <span class="text">Team</span>
+    <li [ngClass]="{ active: activeLink === 'gestion-matriculas' }">
+      <a (click)="showComponent('gestion-matriculas')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Matriculas</span>
+      </a>
+    </li>
+    <li [ngClass]="{ active: activeLink === 'gestion-asignaturas' }">
+      <a (click)="showComponent('gestion-asignaturas')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Asignaturas</span>
+      </a>
+    </li>
+    <li [ngClass]="{ active: activeLink === 'registro-horarios' }">
+      <a (click)="showComponent('registro-horarios')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Horarios</span>
+      </a>
+    </li>
+    <li [ngClass]="{ active: activeLink === 'consulta-calificaciones' }">
+      <a (click)="showComponent('consulta-calificaciones')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Calificaciones</span>
+      </a>
+    </li>
+    <li [ngClass]="{ active: activeLink === 'consulta-certificados' }">
+      <a (click)="showComponent('consulta-certificados')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Certificados</span>
       </a>
     </li>
   </ul>

@@ -6,6 +6,13 @@ import { AdministracionUsuariosComponent } from './pages/Usuarios/administracion
 import { RegistroCalifiacionesComponent } from './pages/Calificaciones/registro-califiaciones/registro-califiaciones.component';
 import { GestionDocentesComponent } from './pages/Docentes/gestion-docentes/gestion-docentes.component';
 import { GestionEstudiantesComponent } from './pages/Inscripciones/gestion-estudiantes/gestion-estudiantes.component';
+import { GestionGruposComponent } from './pages/Grupos/gestion-grupos/gestion-grupos.component';
+import { GestionMatriculasComponent } from './pages/Matriculas/gestion-matriculas/gestion-matriculas.component';
+import { GestionAsignaturasComponent } from './pages/Planes-Estudio/gestion-asignaturas/gestion-asignaturas.component';
+import { EstudianteUsuarioComponent } from './pages/Usuarios/estudiante-usuario/estudiante-usuario.component';
+import { ConsultaCalificacionesComponent } from './pages/Calificaciones/consulta-calificaciones/consulta-calificaciones.component';
+import { ConsultaCertificadosComponent } from './pages/Certificados/consulta-certificados/consulta-certificados.component';
+import { RegistroHorariosComponent } from './pages/Grupos/registro-horarios/registro-horarios.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -13,10 +20,19 @@ const routes: Routes = [
   {path: "administrador", component: AdministracionUsuariosComponent, 
          children:[
           {path: "gestion-estudiantes", component: GestionEstudiantesComponent},
-          {path: "gestion-docentes", component: GestionDocentesComponent}
+          {path: "gestion-docentes", component: GestionDocentesComponent},
+          {path: "gestion-grupos", component: GestionGruposComponent},
+          {path: "gestion-matriculas", component: GestionMatriculasComponent},
+          {path: "gestion-asignaturas", component: GestionAsignaturasComponent}, 
+          {path: "registro-horarios", component: RegistroHorariosComponent}
          ]
-  }
-
+  },
+  {path: "estudiante", component: EstudianteUsuarioComponent, 
+         children:[
+          {path: "consulta-calificaciones", component: ConsultaCalificacionesComponent},
+          {path: "consulta-certificados", component: ConsultaCertificadosComponent}
+         ]
+  },
 ];
 
 @NgModule({

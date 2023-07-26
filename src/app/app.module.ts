@@ -29,6 +29,10 @@ import { MatTableModule } from '@angular/material/table'
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EstudianteUsuarioComponent } from './pages/Usuarios/estudiante-usuario/estudiante-usuario.component';
+import { GestionAsignaturasComponent } from './pages/Planes-Estudio/gestion-asignaturas/gestion-asignaturas.component';
+import { DocenteUsuarioComponent } from './pages/Usuarios/docente-usuario/docente-usuario.component';
+import { EmpleadoUsuarioComponent } from './pages/Usuarios/empleado-usuario/empleado-usuario.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,10 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     PantallaPrincipalComponent,
     NavbarComponent,
+    EstudianteUsuarioComponent,
+    GestionAsignaturasComponent,
+    DocenteUsuarioComponent,
+    EmpleadoUsuarioComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<app-dashboard></app-dashboard>
+<section id="content" [style.left.px]="isSidebarHidden ? 60 : 280" [style.width.px]="
+    isSidebarHidden ? 'calc(100% - 60px)' : 'calc(100% - 280px)'
+  ">
+    <app-consulta-calificaciones *ngIf="componentToShow === 'consulta-calificaciones'"></app-consulta-calificaciones>
+    <app-consulta-certificados *ngIf="componentToShow === 'consulta-certificados'"></app-consulta-certificados>
+</section>
