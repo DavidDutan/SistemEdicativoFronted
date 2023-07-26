@@ -11,10 +11,10 @@ export class HorarioService {
   constructor(private http: HttpClient) { }
 
   save (horario: Horario): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', horario)
+      return this.http.post<any>('http://localhost:8080/horario/registrar', horario)
   }
 
   getAllEstudiantes(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/horario/listar')
   }
 }
