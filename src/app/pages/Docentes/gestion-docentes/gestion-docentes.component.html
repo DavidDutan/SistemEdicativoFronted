@@ -1,68 +1,71 @@
-<section id="content-data">
-    <main>  
-        <!--Agregar un formulario para insertar en la base de datos con algo parecido al  [(ngModel)]="producto.precioUnitario"-->
+<section id="content-data"> 
+  <div class="form-container">
+      <div class="form-left">
         <form (ngSubmit)="guardar()">
-            <div>
-              <label for="nombre">Nombre:</label>
-              <input id="nombre" type="text" [(ngModel)]="docente.usuNombre" name="nombre">
-            </div>
-            <div>
-              <label for="apellido">Apellido:</label>
-              <input id="apellido" type="text" [(ngModel)]="docente.usuApellido" name="apellido">
-            </div>
-            <div>
-              <label for="correo">Correo:</label>
-              <input id="correo" type="email" [(ngModel)]="docente.usuCorreo" name="correo">
-            </div>
-            <div>
-              <label for="cedula">Cédula:</label>
-              <input id="cedula" type="text" [(ngModel)]="docente.usuCedula" name="cedula">
-            </div>
-            <div>
-              <label for="perfil">Contraseña:</label>
-              <input id="perfil" type="text" [(ngModel)]="docente.usuPerfilAcceso" name="perfil">
-            </div>
-            <div>
-              <label for="grado">Perfil de Acceso:</label>
-              <input id="grado" type="text" [(ngModel)]="docente.proEspecialidad" name="grado">
-            </div>
-            <div>
-              <label for="id">Especialidad:</label>
-              <input id="id" type="text" [(ngModel)]="docente.usuId" name="id">
-            </div>
-            <button type="submit">Guardar</button>
-          </form>
-
-        <div class="table-data">
-            <div class="order">
-                <div class="head">
-                    <h3>Listado Docentes</h3>
-                    <i class='bx bx-search'></i>
-                    <i class='bx bx-filter'></i>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th *ngFor="let column of displayedColumns">{{ column }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let docente of dataSource">
-                            <td>{{docente.usuNombre}}</td>
-                            <td>{{docente.usuApellido}}</td>
-                            <td>{{docente.usuCorreo}}</td>
-                            <td>{{docente.usuCedula}}</td>
-                            <td>{{docente.usuPerfilAcceso}}</td>
-                            <td>{{docente.proEspecialidad}}</td>
-                            <td>{{docente.usuId}}</td>
-                            <td>
-                                <button (click)="guardar()">Editar</button>
-                                <button (click)="guardar()">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" type="text" [(ngModel)]="docente.usuNombre" name="nombre">
+          </div>
+          <div>
+            <label for="apellido">Apellido:</label>
+            <input id="apellido" type="text" [(ngModel)]="docente.usuApellido" name="apellido">
+          </div>
+          <div>
+            <label for="correo">Correo:</label>
+            <input id="correo" type="email" [(ngModel)]="docente.usuCorreo" name="correo">
+          </div>
+          <div>
+              <label for="id">Contraseña:</label>
+              <input id="id" type="password" [(ngModel)]="docente.usuPassword" name="password">
+          </div>
+        </form>
+      </div>
+      <div class="form-right">
+        <div>
+          <label for="cedula">Cédula:</label>
+          <input id="cedula" type="text" [(ngModel)]="docente.usuCedula" name="cedula">
         </div>
-    </main>
+        <div>
+          <label for="perfil">Perfil de Acceso:</label>
+          <input id="perfil" type="text" [(ngModel)]="docente.usuPerfilAcceso" name="perfil">
+        </div>
+        <div>
+          <label for="especialidad">Especialidad:</label>
+          <input id="especialidad" type="text" [(ngModel)]="docente.proEspecialidad" name="especialidad">
+        </div>
+      </div>
+    </div>
+    <button class="btn-guardar" (click)="guardar()">Guardar</button>
+
+  <div class="table-data">
+      <div class="order">
+          <div class="head">
+              <h3>Listado Docentes</h3>
+              <i class='bx bx-search'></i>
+              <i class='bx bx-filter'></i>
+          </div>
+          <table>
+              <thead>
+                  <tr>
+                      <th *ngFor="let column of displayedColumns">{{ column }}</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let docente of dataSource">
+                      <td>{{docente.usuNombre}}</td>
+                      <td>{{docente.usuApellido}}</td>
+                      <td>{{docente.usuCorreo}}</td>
+                      <td>{{docente.usuCedula}}</td>
+                      <td>{{docente.usuPerfilAcceso}}</td>
+                      <td>{{docente.proEspecialidad}}</td>
+                      <td>{{docente.usuId}}</td>
+                      <td>
+                          <button  class="btn-editar" (click)="guardar()">Editar</button>
+                          <button  class="btn-eliminar" (click)="guardar()">Eliminar</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
 </section>

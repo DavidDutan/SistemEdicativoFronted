@@ -14,7 +14,7 @@ export class GestionDocentesComponent {
 
   dataSource: Docente[] = []; 
 
-  displayedColumns: string[] = ['Nombre', 'Apellido', 'Correo', 'Cedula', 'Contraseña', 'Perfil Acceso', 'Especialidad', 'Acciones'];
+  displayedColumns: string[] = ['Nombre', 'Apellido', 'Correo', 'Cedula', 'Perfil Acceso', 'Especialidad', 'Id Docente', 'Acciones'];
 
   docente: Docente = new Docente()
 
@@ -46,6 +46,12 @@ export class GestionDocentesComponent {
 
   limpiar(){
     this.docente.usuNombre="";
+    this.docente.usuApellido="";
+    this.docente.usuCedula="";
+    this.docente.usuCorreo="";
+    this.docente.usuPerfilAcceso="";
+    this.docente.usuPassword="";
+    this.docente.proEspecialidad="";
   }
 
 

@@ -10,10 +10,10 @@ export class DocenteService {
     constructor(private http: HttpClient) { }
 
     save (docente: Docente): Observable<any[]> {
-        return this.http.post<any>('http://localhost:8080/usuario/registrar', docente)
+        return this.http.post<any>('http://localhost:8080/profesores/registrar', docente)
     }
   
     getAllDocentes(): Observable<any[]>{
-      return this.http.get<any>('http://localhost:8080/usuario/listar')
+      return this.http.get<any>('http://localhost:8080/profesores/listar')
     }
 }
