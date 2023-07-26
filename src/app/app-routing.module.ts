@@ -13,9 +13,11 @@ import { EstudianteUsuarioComponent } from './pages/Usuarios/estudiante-usuario/
 import { ConsultaCalificacionesComponent } from './pages/Calificaciones/consulta-calificaciones/consulta-calificaciones.component';
 import { ConsultaCertificadosComponent } from './pages/Certificados/consulta-certificados/consulta-certificados.component';
 import { RegistroHorariosComponent } from './pages/Grupos/registro-horarios/registro-horarios.component';
+import { RecuperacionContraseniaComponent } from './pages/Autentificacion/recuperacion-contrasenia/recuperacion-contrasenia.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
+  {path: "recuperar", component: RecuperacionContraseniaComponent},
   {path: "", component: PantallaPrincipalComponent},
   {path: "administrador", component: AdministracionUsuariosComponent, 
          children:[
