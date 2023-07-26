@@ -27,4 +27,8 @@ export class UsuarioService {
       tap(response => this._perfilAcceso.next(response.perfilAcceso)) 
     );;
   }
+
+  limpiarPerfilAcceso(): void {
+    this._perfilAcceso.next('');
+  }
 }

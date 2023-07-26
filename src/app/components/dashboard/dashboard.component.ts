@@ -38,6 +38,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   onElementClicked(element: HTMLElement) {
     if (element.tagName === 'A') {
       this.activeLink = element.getAttribute('name') || '';
+      if (element.className.includes('logout')) {
+        this.usuarioService.limpiarPerfilAcceso();  // Llama al nuevo método cuando se haga clic en el enlace de cierre de sesión
+      }
     }
     if (element.className.includes('bx bx-menu')) {
       this.isSidebarHidden = !this.isSidebarHidden;
