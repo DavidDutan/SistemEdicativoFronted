@@ -1,1 +1,82 @@
-<p>registro-horarios works!</p>
+<section id="content-data">
+  <div class="form-container">
+    <div class="form-left">
+      <form (ngSubmit)="guardar()">
+        <div>
+          <label for="horarioDia">Horario Dia:</label>
+          <input
+            id="horarioDia"
+            type="text"
+            [(ngModel)]="horario.horDia"
+            name="horarioDia"
+          />
+        </div>
+        <div>
+          <label for="horarioEntrada">Horario Entrada:</label>
+          <input
+            id="horarioEntrada"
+            type="text"
+            [(ngModel)]="horario.horHoraEntrada"
+            name="horarioEntrada"
+          />
+        </div>
+        <div>
+          <label for="horarioSalida">Horario Salida:</label>
+          <input
+            id="horarioSalida"
+            type="text"
+            [(ngModel)]="horario.horHoraSalida"
+            name="horarioSalida"
+          />
+        </div>
+        <div>
+          <label for="aula">Aula:</label>
+          <input id="id" type="text" [(ngModel)]="horario.aulas" name="aula" />
+        </div>
+      </form>
+    </div>
+    <div class="form-right">
+      <div>
+        <label for="asignatura">Asignatura:</label>
+        <input
+          id="asignatura"
+          type="text"
+          [(ngModel)]="horario.grupoAsignaturas"
+          name="asignatura"
+        />
+      </div>
+    </div>
+  </div>
+  <button class="btn-guardar" (click)="guardar()">Guardar</button>
+
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Listado Horarios</h3>
+        <i class="bx bx-search"></i>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let column of displayedColumns">{{ column }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let horario of dataSource">
+            <td>{{ horario.horDia }}</td>
+            <td>{{ horario.horHoraEntrada }}</td>
+            <td>{{ horario.horHoraSalida }}</td>
+            <td>{{ horario.aulas }}</td>
+            <td>{{ horario.grupoAsignaturas }}</td>
+            <td>{{ horario.horId }}</td>
+            <td>
+              <button class="btn-editar" (click)="guardar()">Editar</button>
+              <button class="btn-eliminar" (click)="guardar()">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
