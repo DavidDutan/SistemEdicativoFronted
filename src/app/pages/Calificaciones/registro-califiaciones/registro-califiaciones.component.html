@@ -1,1 +1,60 @@
-<p>registro-califiaciones works!</p>
+<section id="content-data"> 
+    <div class="form-container">
+        <div class="form-left">
+          <form (ngSubmit)="guardar()">
+            <div>
+              <label for="nota">Nota:</label>
+              <input id="nota" type="number" [(ngModel)]="calificacion.nota" name="nota">
+            </div>
+            <div>
+              <label for="comentario">Comentario:</label>
+              <textarea id="comentario" [(ngModel)]="calificacion.comentario" name="comentario"></textarea>
+            </div>
+            <div>
+              <label for="fechaCalificacion">Fecha de Calificación:</label>
+              <input id="fechaCalificacion" type="date" [(ngModel)]="calificacion.fechaCalificacion" name="fechaCalificacion">
+            </div>
+            <div>
+              <label for="caliId">ID:</label>
+              <input id="caliId" type="text" value="{{ calificacion.caliId }}" name="caliId" readonly>
+            </div>
+          </form>
+        </div>
+        <div class="form-right">
+          <div>
+            <label for="caliId">ID:</label>
+            <span>{{ calificacion.caliId }}</span>
+          </div>
+        </div>
+    </div>
+    <button class="btn-guardar" (click)="guardar()">Guardar</button>
+
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Listado Calificaciones</h3>
+                <i class='bx bx-search'></i>
+                <i class='bx bx-filter'></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th *ngFor="let column of displayedColumns">{{ column }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let calificacion of dataSource">
+                        <td>{{ calificacion.nota }}</td>
+                        <td>{{ calificacion.comentario }}</td>
+                        <td>{{ calificacion.fechaCalificacion }}</td>
+                        <td>{{ calificacion.caliId }}</td>
+                        <td>
+                            <button class="btn-editar" (click)="guardar()">Editar</button>
+                            <button class="btn-eliminar" (click)="guardar()">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
