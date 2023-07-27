@@ -1,0 +1,16 @@
+<section id="content-data">
+    <div class="form-container">
+      <form (ngSubmit)="guardar()">
+        <div>
+          <label for="grpId">ID del Grupo:</label>
+          <input id="grpId" type="number" [(ngModel)]="grupoAsignatura.grpId" name="grpId">
+        </div>
+        <div>
+          <label for="grupoAcademino">Grupo Académico:</label>
+          <input id="grupoAcademino" type="text" [(ngModel)]="grupoAsignatura.grupoAcademino" name="grupoAcademino">
+        </div>
+        <button class="btn-guardar" type="submit">Guardar</button>
+      </form>
+    </div>
+  </section>
+  

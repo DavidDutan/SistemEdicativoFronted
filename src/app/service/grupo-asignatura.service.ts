@@ -11,10 +11,10 @@ export class GrupoAsignaturaService {
   constructor(private http: HttpClient) { }
 
   save (grpAsignatura: GrupoAsignatura): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', grpAsignatura)
+      return this.http.post<any>('http://localhost:8080/grupos_asignaturas/registrar', grpAsignatura)
   }
 
-  getAllEstudiantes(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+  getAllGrupoAsignatura(): Observable<any[]>{
+    return this.http.get<any>('http://localhost:8080/grupos_asignaturas/listar')
   }
 }
