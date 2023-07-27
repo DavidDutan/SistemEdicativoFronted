@@ -49,7 +49,6 @@ export class AulaComponent {
 
   guardar(){
     console.log(this.aula)
-    this.aula.edificio = this.edificio
     this.aulaService.save(this.aula).subscribe(data =>{
       console.log(data)
       this.loadAulas()
@@ -59,6 +58,6 @@ export class AulaComponent {
 
   limpiar(){
     this.aula.auldescripcion="";
-    this.aula.edificio=new Edificio;
+    this.aula.edificio=undefined;
   }
 }
