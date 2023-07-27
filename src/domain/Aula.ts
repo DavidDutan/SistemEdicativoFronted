@@ -1,6 +1,8 @@
+import { Edificio } from "./Edificio";
+
 export class Aula {
     aulId?: BigInt;
     auldescripcion?: string;
-    edificio?: BigInt;
+    edificio?: Edificio;
     horarios?: BigInt;
 }
