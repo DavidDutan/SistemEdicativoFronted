@@ -14,7 +14,7 @@ export class EdificioService {
       return this.http.post<any>('http://localhost:8080/edificio/registrar', edificio)
   }
 
-  getAllEstudiantes(): Observable<any[]>{
+  getAllEdificio(): Observable<any[]>{
     return this.http.get<any>('http://localhost:8080/edificio/listar')
   }
 }

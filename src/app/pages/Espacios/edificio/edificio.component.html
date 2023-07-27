@@ -1,1 +1,51 @@
-<p>edificio works!</p>
+<section id="content-data">
+  <div class="form-container">
+    <div class="form-left">
+      <form (ngSubmit)="guardar()">
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input
+            id="nombre"
+            type="text"
+            [(ngModel)]="edificio.ediNombre"
+            name="nombre"
+          />
+        </div>
+      </form>
+    </div>
+    <div class="form-right">
+      <div>
+        <label for="aula">Aula:</label>
+        <input id="aula" type="text" [(ngModel)]="edificio.aulas" name="aula" />
+      </div>
+    </div>
+  </div>
+  <button class="btn-guardar" (click)="guardar()">Guardar</button>
+
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Listado Edificio</h3>
+        <i class="bx bx-search"></i>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let column of displayedColumns">{{ column }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let estudiante of dataSource">
+            <td>{{ edificio.ediNombre }}</td>
+            <td>{{ edificio.aulas }}</td>
+            <td>
+              <button class="btn-editar" (click)="guardar()">Editar</button>
+              <button class="btn-eliminar" (click)="guardar()">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

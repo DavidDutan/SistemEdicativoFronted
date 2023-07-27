@@ -15,6 +15,7 @@ import { ConsultaCertificadosComponent } from './pages/Certificados/consulta-cer
 import { RegistroHorariosComponent } from './pages/Grupos/registro-horarios/registro-horarios.component';
 import { RecuperacionContraseniaComponent } from './pages/Autentificacion/recuperacion-contrasenia/recuperacion-contrasenia.component';
 import { DocenteUsuarioComponent } from './pages/Usuarios/docente-usuario/docente-usuario.component';
+import { EdificioComponent } from './pages/Espacios/edificio/edificio.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
           {path: "gestion-grupos", component: GestionGruposComponent},
           {path: "gestion-matriculas", component: GestionMatriculasComponent},
           {path: "gestion-asignaturas", component: GestionAsignaturasComponent}, 
-          {path: "registro-horarios", component: RegistroHorariosComponent}
+          {path: "registro-horarios", component: RegistroHorariosComponent},
+          {path: "registro-edificio", component: EdificioComponent}
          ]
   },
   {path: "estudiante", component: EstudianteUsuarioComponent, 
