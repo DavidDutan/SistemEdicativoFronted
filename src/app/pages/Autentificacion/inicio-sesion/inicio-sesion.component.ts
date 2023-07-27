@@ -9,7 +9,6 @@ import { Usuario } from 'src/domain/Usuario';
   styleUrls: ['./inicio-sesion.component.scss'],
 })
 export class InicioSesionComponent implements OnInit {
-
   usuario: Usuario = new Usuario();
   error: string = '';
 
@@ -39,6 +38,9 @@ export class InicioSesionComponent implements OnInit {
             break;
           case 'Es':
             this.router.navigate(['/estudiante']);
+            break;
+          case 'Do':
+            this.router.navigate(['/docente']);
             break;
         }
       },

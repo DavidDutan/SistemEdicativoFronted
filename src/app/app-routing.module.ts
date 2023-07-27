@@ -14,6 +14,7 @@ import { ConsultaCalificacionesComponent } from './pages/Calificaciones/consulta
 import { ConsultaCertificadosComponent } from './pages/Certificados/consulta-certificados/consulta-certificados.component';
 import { RegistroHorariosComponent } from './pages/Grupos/registro-horarios/registro-horarios.component';
 import { RecuperacionContraseniaComponent } from './pages/Autentificacion/recuperacion-contrasenia/recuperacion-contrasenia.component';
+import { DocenteUsuarioComponent } from './pages/Usuarios/docente-usuario/docente-usuario.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -33,6 +34,11 @@ const routes: Routes = [
          children:[
           {path: "consulta-calificaciones", component: ConsultaCalificacionesComponent},
           {path: "consulta-certificados", component: ConsultaCertificadosComponent}
+         ]
+  },
+  {path: "docente", component: DocenteUsuarioComponent, 
+         children:[
+          {path: "registro-calificaciones", component: RegistroCalifiacionesComponent},
          ]
   },
 ];
