@@ -1,1 +1,32 @@
-<p>consulta-calificaciones works!</p>
+<section id="content-data"> 
+    <div class="table-data">
+        <div class="order">
+            <div class="head">
+                <h3>Listado Calificaciones</h3>
+                <i class='bx bx-search'></i>
+                <i class='bx bx-filter'></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nota</th>
+                        <th>Comentario</th>
+                        <th>Fecha de Calificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let calificacion of calificaciones">
+                        <td>{{ calificacion.caliId }}</td>
+                        <td><span>{{ calificacion.nota }}</span></td>
+                        <td><span>{{ calificacion.comentario }}</span></td>
+                        <td><input type="date" [value]="calificacion.fechaCalificacion" readonly></td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
