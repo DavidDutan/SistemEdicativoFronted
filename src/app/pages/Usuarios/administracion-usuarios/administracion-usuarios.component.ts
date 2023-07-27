@@ -20,7 +20,6 @@ export class AdministracionUsuariosComponent implements OnDestroy {
         this.componentToShow = componentName;
       }),
       
-      // Se agrega la suscripción al estado del sidebar
       this.dashboardService.sidebarState$.subscribe((isHidden) => {
         this.isSidebarHidden = isHidden;
       })
