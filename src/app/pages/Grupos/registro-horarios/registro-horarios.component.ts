@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HorarioService } from 'src/app/service/horario.service';
 import { Horario } from 'src/domain/Horario';
 import { Router } from '@angular/router';
+import { AsignaturaService } from 'src/app/service/asignatura.service';
 
 @Component({
   selector: 'app-registro-horarios',
@@ -19,7 +20,7 @@ export class RegistroHorariosComponent {
 
   horarios:any
 
-  constructor(private router: Router, private horarioService: HorarioService) {}
+  constructor(private router: Router, private horarioService: HorarioService, private asignaturaService: AsignaturaService) {}
 
   ngOnInit(): void {
     this.loadHorarios()
