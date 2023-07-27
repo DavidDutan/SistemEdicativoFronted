@@ -3,4 +3,5 @@ export class Calificacion {
     nota?: number;
     comentario?: string;
     fechaCalificacion?: string;
+    caliEliminado?: boolean;
 }

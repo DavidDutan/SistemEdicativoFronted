@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { flatMap } from 'rxjs';
 import { CalificacionService } from 'src/app/service/calificacion.service';
 import { Calificacion } from 'src/domain/Calificacion';
 
@@ -44,6 +45,7 @@ export class RegistroCalifiacionesComponent {
 
   guardar(){
     console.log(this.calificacion)
+    this.calificacion.caliEliminado = false;
     this.calificacioService.save(this.calificacion).subscribe(data =>{
       console.log(data)
       this.loadCalificacion()

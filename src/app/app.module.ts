@@ -33,6 +33,8 @@ import { EstudianteUsuarioComponent } from './pages/Usuarios/estudiante-usuario/
 import { GestionAsignaturasComponent } from './pages/Planes-Estudio/gestion-asignaturas/gestion-asignaturas.component';
 import { DocenteUsuarioComponent } from './pages/Usuarios/docente-usuario/docente-usuario.component';
 import { EmpleadoUsuarioComponent } from './pages/Usuarios/empleado-usuario/empleado-usuario.component';
+import { EdificioComponent } from './pages/Espacios/edificio/edificio.component';
+import { AulaComponent } from './pages/Espacios/aula/aula.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { EmpleadoUsuarioComponent } from './pages/Usuarios/empleado-usuario/empl
     GestionAsignaturasComponent,
     DocenteUsuarioComponent,
     EmpleadoUsuarioComponent,
+    EdificioComponent,
+    AulaComponent,
   ],
   imports: [
     BrowserModule,
