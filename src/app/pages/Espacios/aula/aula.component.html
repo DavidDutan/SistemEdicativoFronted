@@ -9,7 +9,12 @@
         </form>
       </div>
       <div class="form-right">
-
+        <div>
+            <label for="edificio">Edificio:</label>
+            <select id="edificio" [(ngModel)]="aula.edificio" name="edificio">
+              <option *ngFor="let edificio of lstEdificios" [value]="edificio">{{ edificio.ediNombre }}</option>
+            </select>
+          </div>
       </div>
     </div>
     <button class="btn-guardar" (click)="guardar()">Guardar</button>
@@ -30,6 +35,7 @@
           <tbody>
             <tr *ngFor="let aula of dataSource">
               <td>{{ aula.auldescripcion }}</td>
+              <td>{{ aula.edificio }}</td>
               <td>
                 <button class="btn-editar" (click)="guardar()">Editar</button>
                 <button class="btn-eliminar" (click)="guardar()">Eliminar</button>
