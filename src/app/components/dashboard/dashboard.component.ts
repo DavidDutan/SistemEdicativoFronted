@@ -13,19 +13,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
   activeLink: string = '';
   isSidebarHidden: boolean = false;
   perfilAcceso: string = '';
-  perfilAccesoSub!: Subscription;
+  usuarioSub!: Subscription;
+
 
   constructor(private dashboardService: DashboardService, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.perfilAccesoSub = this.usuarioService.perfilAcceso$.subscribe(perfil => {
-      this.perfilAcceso = perfil;
+    this.usuarioSub = this.usuarioService.usuario$.subscribe(usuario => {
+      this.perfilAcceso = usuario ? usuario.usuPerfilAcceso || '' : '';
     });
   }
 
   ngOnDestroy() {
-    if (this.perfilAccesoSub) {
-      this.perfilAccesoSub.unsubscribe();
+    if (this.usuarioSub) {
+      this.usuarioSub.unsubscribe();
     }
   }
   
@@ -39,7 +40,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (element.tagName === 'A') {
       this.activeLink = element.getAttribute('name') || '';
       if (element.className.includes('logout')) {
-        this.usuarioService.limpiarPerfilAcceso();  // Llama al nuevo método cuando se haga clic en el enlace de cierre de sesión
+        this.usuarioService.limpiarUsuario();
       }
     }
     if (element.className.includes('bx bx-menu')) {

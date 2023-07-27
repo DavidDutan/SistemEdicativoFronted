@@ -7,13 +7,12 @@ import { Usuario } from 'src/domain/Usuario';
   providedIn: 'root',
 })
 export class UsuarioService {
-
-  private _perfilAcceso = new BehaviorSubject<string>('');
-  readonly perfilAcceso$ = this._perfilAcceso.asObservable();
+  private _usuario = new BehaviorSubject<Usuario | null>(null);
+  readonly usuario$ = this._usuario.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  Autentificacion(usuario: Usuario): Observable<{perfilAcceso: string}> {
+  Autentificacion(usuario: Usuario): Observable<Usuario> {
     let params = new HttpParams();
     if (usuario.usuCorreo) {
       params = params.set('usuCorreo', usuario.usuCorreo);
@@ -21,14 +20,14 @@ export class UsuarioService {
     if (usuario.usuPassword) {
       params = params.set('usuPassword', usuario.usuPassword);
     }
-    return this.http.get<{perfilAcceso: string}>('http://localhost:8080/usuarios/login', {
-      params,
-    }).pipe(
-      tap(response => this._perfilAcceso.next(response.perfilAcceso)) 
-    );;
+    return this.http
+      .get<Usuario>('http://localhost:8080/usuarios/login', {
+        params,
+      })
+      .pipe(tap((response) => this._usuario.next(response)));
   }
 
-  limpiarPerfilAcceso(): void {
-    this._perfilAcceso.next('');
+  limpiarUsuario(): void {
+    this._usuario.next(null);
   }
 }

@@ -9,6 +9,7 @@ import { Usuario } from 'src/domain/Usuario';
   styleUrls: ['./inicio-sesion.component.scss'],
 })
 export class InicioSesionComponent implements OnInit {
+
   usuario: Usuario = new Usuario();
   error: string = '';
 
@@ -16,8 +17,7 @@ export class InicioSesionComponent implements OnInit {
 
   @ViewChild('wrapper') wrapperElement!: ElementRef<HTMLDivElement>;
   @ViewChild('loginLink') loginLinkElement!: ElementRef<HTMLAnchorElement>;
-  @ViewChild('registerLink')
-  registerLinkElement!: ElementRef<HTMLAnchorElement>;
+  @ViewChild('registerLink') registerLinkElement!: ElementRef<HTMLAnchorElement>;
 
   ngOnInit(): void {
     this.registerLinkElement.nativeElement.addEventListener('click', () => {
@@ -32,16 +32,20 @@ export class InicioSesionComponent implements OnInit {
   login(): void {
     this.usuarioService.Autentificacion(this.usuario).subscribe(
       (response) => {
-        switch (response.perfilAcceso) {
-          case 'Ad':
-            this.router.navigate(['/administrador']);
-            break;
-          case 'Es':
-            this.router.navigate(['/estudiante']);
-            break;
-          case 'Do':
-            this.router.navigate(['/docente']);
-            break;
+        if (response) {
+          switch (response.usuPerfilAcceso) {
+            case 'Ad':
+              this.router.navigate(['/administrador']);
+              break;
+            case 'Es':
+              this.router.navigate(['/estudiante']);
+              break;
+            case 'Do':
+              this.router.navigate(['/docente']);
+              break;
+          }
+        } else {
+          this.error = "Usuario o contraseña incorrectos.";
         }
       },
       (error) => {

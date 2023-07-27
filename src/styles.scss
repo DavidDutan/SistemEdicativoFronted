@@ -227,7 +227,7 @@ body {
     background-color: var(--light);
 }
 
-.form-left input, .form-right input {
+.form-left input, .form-right input, .form-left select, .form-right select {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
@@ -238,27 +238,14 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
-.form-left input:focus, .form-right input:focus {
+.form-left input:focus, .form-right input:focus, .form-left select:focus, .form-right select:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
 
-.form-right select {
-	width: 100%;
-	margin-bottom: 10px;
-	padding: 10px;
-	background-color: var(--light);
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.3s ease;
-	appearance: none; /* Elimina la apariencia por defecto del select */
-  }
-  
-  .form-right select:focus {
-	outline: none;
-	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  }
+.form-left select, .form-right select {
+	appearance: none;
+}
 
 .btn-guardar {
     display: block;
