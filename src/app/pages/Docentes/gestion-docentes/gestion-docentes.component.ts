@@ -44,6 +44,15 @@ export class GestionDocentesComponent {
     })
   }
 
+  editar(docente: Docente){
+    this.docente = { ...docente };
+  }
+
+  
+  eliminar(){
+
+  }
+
   limpiar(){
     this.docente.usuNombre="";
     this.docente.usuApellido="";
@@ -53,6 +62,4 @@ export class GestionDocentesComponent {
     this.docente.usuPassword="";
     this.docente.proEspecialidad="";
   }
-
-
 }

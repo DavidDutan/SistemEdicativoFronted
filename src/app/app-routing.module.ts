@@ -19,6 +19,7 @@ import { EdificioComponent } from './pages/Espacios/edificio/edificio.component'
 import { AulaComponent } from './pages/Espacios/aula/aula.component';
 import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/sistema-confg.component';
 import { GeneracionReportesComponent } from './pages/Reportes/generacion-reportes/generacion-reportes.component';
+import { PerfilUsuarioComponent } from './pages/Usuarios/perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
           {path: "registro-aula", component: AulaComponent},
           {path: "registro-edificio", component: EdificioComponent},
           {path: "configuracion", component: SistemaConfgComponent},
-          {path: "generar-reporte", component: GeneracionReportesComponent}
+          {path: "generar-reporte", component: GeneracionReportesComponent},
+          {path: "perfil-usuario", component: PerfilUsuarioComponent}
          ]
   },
   {path: "estudiante", component: EstudianteUsuarioComponent, 

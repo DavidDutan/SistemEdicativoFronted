@@ -38,7 +38,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   @HostListener('click', ['$event.target'])
   onElementClicked(element: HTMLElement) {
     if (element.tagName === 'A') {
-      this.activeLink = element.getAttribute('name') || '';
+      let componentName = element.getAttribute('name') || '';
+      this.activeLink = componentName;
+      this.dashboardService.showComponent(componentName);
       if (element.className.includes('logout')) {
         this.usuarioService.limpiarUsuario();
       }

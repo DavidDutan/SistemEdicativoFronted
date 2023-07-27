@@ -27,6 +27,17 @@ export class UsuarioService {
       .pipe(tap((response) => this._usuario.next(response)));
   }
 
+  save(usuario: Usuario): Observable<any[]> {
+    return this.http.post<any>(
+      'http://localhost:8080/usuarios/registrar',
+      usuario
+    );
+  }
+
+  getAllUsuarios(): Observable<any[]> {
+    return this.http.get<any>('http://localhost:8080/usuarios/listar');
+  }
+
   limpiarUsuario(): void {
     this._usuario.next(null);
   }
