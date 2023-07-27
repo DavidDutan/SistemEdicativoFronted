@@ -11,10 +11,10 @@ export class CarreraService {
   constructor(private http: HttpClient) { }
 
   save (carrera: Carrera): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', carrera)
+      return this.http.post<any>('http://localhost:8080/carreras/registrar', carrera)
   }
 
   getAllEstudiantes(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/carreras/listar')
   }
 }

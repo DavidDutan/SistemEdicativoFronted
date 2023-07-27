@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Usuario } from 'src/domain/Usuario';
 
@@ -8,10 +9,11 @@ import { Usuario } from 'src/domain/Usuario';
   styleUrls: ['./inicio-sesion.component.scss'],
 })
 export class InicioSesionComponent implements OnInit {
+
   usuario: Usuario = new Usuario();
   error: string = '';
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 
   @ViewChild('wrapper') wrapperElement!: ElementRef<HTMLDivElement>;
   @ViewChild('loginLink') loginLinkElement!: ElementRef<HTMLAnchorElement>;
@@ -30,8 +32,15 @@ export class InicioSesionComponent implements OnInit {
 
   login(): void {
     this.usuarioService.Autentificacion(this.usuario).subscribe(
-      (perfilAcceso) => {
-        console.log(perfilAcceso);
+      (response) => {
+        switch (response.perfilAcceso) {
+          case 'Ad':
+            this.router.navigate(['/administrador']);
+            break;
+          case 'Es':
+            this.router.navigate(['/estudiante']);
+            break;
+        }
       },
       (error) => {
         this.error = error.message;

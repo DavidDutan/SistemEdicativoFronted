@@ -11,10 +11,10 @@ export class MatriculaService {
   constructor(private http: HttpClient) { }
 
   save (matricula: Matricula): Observable<any[]> {
-      return this.http.post<any>('http://localhost:8080/usuario/registrar', matricula)
+      return this.http.post<any>('http://localhost:8080/matricula/registrar', matricula)
   }
 
   getAllEstudiantes(): Observable<any[]>{
-    return this.http.get<any>('http://localhost:8080/usuario/listar')
+    return this.http.get<any>('http://localhost:8080/matricula/listar')
   }
 }
