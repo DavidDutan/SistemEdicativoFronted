@@ -38,12 +38,9 @@
     <div class="form-right">
       <div>
         <label for="asignatura">Asignatura:</label>
-        <input
-          id="asignatura"
-          type="text"
-          [(ngModel)]="horario.grupoAsignaturas"
-          name="asignatura"
-        />
+        <select id="asignatura" [(ngModel)]="horario.grupoAsignaturas" name="asignatura">
+          <option *ngFor="let asignatura of lstAsignaturas" [value]="asignatura">{{ asignatura.asigNombre }}</option>
+        </select>
       </div>
     </div>
   </div>

@@ -46,7 +46,6 @@ export class EdificioComponent {
 
   limpiar(){
     this.edificio.ediNombre="";
-    this.edificio.aulas=undefined;
-    
+    this.edificio.ediNumeroAulas=undefined;
   }
 }

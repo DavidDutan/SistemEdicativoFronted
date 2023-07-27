@@ -34,9 +34,9 @@
               </thead>
               <tbody>
                   <tr *ngFor="let asignatura of dataSource">
+                      <td>{{ asignatura.asigId }}</td>
                       <td>{{ asignatura.asigNombre }}</td>
                       <td>{{ asignatura.asigCreditos }}</td>
-                      <td>{{ asignatura.asigId }}</td>
                       <td>
                           <button class="btn-editar" (click)="guardar()">Editar</button>
                           <button class="btn-eliminar" (click)="guardar()">Eliminar</button>

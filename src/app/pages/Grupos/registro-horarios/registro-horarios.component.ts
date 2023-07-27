@@ -3,6 +3,7 @@ import { HorarioService } from 'src/app/service/horario.service';
 import { Horario } from 'src/domain/Horario';
 import { Router } from '@angular/router';
 import { AsignaturaService } from 'src/app/service/asignatura.service';
+import { Asignatura } from 'src/domain/Asignatura';
 
 @Component({
   selector: 'app-registro-horarios',
@@ -10,7 +11,10 @@ import { AsignaturaService } from 'src/app/service/asignatura.service';
   styleUrls: ['./registro-horarios.component.scss']
 })
 export class RegistroHorariosComponent {
+
   lstHorarios = new Array()
+
+  lstAsignaturas = new Array()
 
   dataSource: Horario[] = []; 
 
@@ -18,12 +22,15 @@ export class RegistroHorariosComponent {
 
   horario: Horario = new Horario()
 
+  asignatura: Asignatura = new Asignatura()
+
   horarios:any
 
   constructor(private router: Router, private horarioService: HorarioService, private asignaturaService: AsignaturaService) {}
 
   ngOnInit(): void {
     this.loadHorarios()
+    this.loadAsignaturas()
   }
 
   loadHorarios(){
@@ -35,8 +42,15 @@ export class RegistroHorariosComponent {
     })
   }
 
+  loadAsignaturas() {
+    this.asignaturaService.getAllAsignaturas().subscribe((data: any) => {
+      this.lstAsignaturas = data;
+    });
+  }
+
   guardar(){
     console.log(this.horario)
+    this.horario.grupoAsignaturas = this.asignatura.asigId
     this.horarioService.save(this.horario).subscribe(data =>{
       console.log(data)
       this.loadHorarios()

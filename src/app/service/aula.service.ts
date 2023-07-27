@@ -14,7 +14,7 @@ export class AulaService {
       return this.http.post<any>('http://localhost:8080/aulas/registrar', aula)
   }
 
-  getAllEstudiantes(): Observable<any[]>{
+  getAllAulas(): Observable<any[]>{
     return this.http.get<any>('http://localhost:8080/aulas/listar')
   }
 }

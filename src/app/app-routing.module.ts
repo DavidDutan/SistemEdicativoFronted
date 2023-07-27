@@ -16,6 +16,7 @@ import { RegistroHorariosComponent } from './pages/Grupos/registro-horarios/regi
 import { RecuperacionContraseniaComponent } from './pages/Autentificacion/recuperacion-contrasenia/recuperacion-contrasenia.component';
 import { DocenteUsuarioComponent } from './pages/Usuarios/docente-usuario/docente-usuario.component';
 import { EdificioComponent } from './pages/Espacios/edificio/edificio.component';
+import { AulaComponent } from './pages/Espacios/aula/aula.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
           {path: "gestion-matriculas", component: GestionMatriculasComponent},
           {path: "gestion-asignaturas", component: GestionAsignaturasComponent}, 
           {path: "registro-horarios", component: RegistroHorariosComponent},
+          {path: "registro-aula", component: AulaComponent},
           {path: "registro-edificio", component: EdificioComponent}
          ]
   },

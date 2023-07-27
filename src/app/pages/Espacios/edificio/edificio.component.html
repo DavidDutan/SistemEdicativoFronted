@@ -4,19 +4,14 @@
       <form (ngSubmit)="guardar()">
         <div>
           <label for="nombre">Nombre:</label>
-          <input
-            id="nombre"
-            type="text"
-            [(ngModel)]="edificio.ediNombre"
-            name="nombre"
-          />
+          <input id="nombre" type="text" [(ngModel)]="edificio.ediNombre" name="nombre" />
         </div>
       </form>
     </div>
     <div class="form-right">
       <div>
-        <label for="aula">Aula:</label>
-        <input id="aula" type="text" [(ngModel)]="edificio.aulas" name="aula" />
+        <label for="aula">Numero de aulas:</label>
+        <input id="aula" type="text" [(ngModel)]="edificio.ediNumeroAulas" name="aula" />
       </div>
     </div>
   </div>
@@ -36,9 +31,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let estudiante of dataSource">
+          <tr *ngFor="let edificio of dataSource">
             <td>{{ edificio.ediNombre }}</td>
-            <td>{{ edificio.aulas }}</td>
+            <td>{{ edificio.ediNumeroAulas }}</td>
             <td>
               <button class="btn-editar" (click)="guardar()">Editar</button>
               <button class="btn-eliminar" (click)="guardar()">Eliminar</button>

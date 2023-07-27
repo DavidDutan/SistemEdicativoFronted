@@ -86,7 +86,16 @@
       </a>
     </li>
     <li
-      *ngIf="perfilAcceso === 'Do'"
+      *ngIf="perfilAcceso === 'Ad'"
+      [ngClass]="{ active: activeLink === 'registro-aula' }"
+    >
+      <a (click)="showComponent('registro-aula')">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Aulas</span>
+      </a>
+    </li>
+    <li
+      *ngIf="perfilAcceso === 'Ad'"
       [ngClass]="{ active: activeLink === 'registro-edificio' }"
     >
       <a (click)="showComponent('registro-edificio')">

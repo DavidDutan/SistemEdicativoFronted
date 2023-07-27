@@ -1,1 +1,42 @@
-<p>aula works!</p>
+<section id="content-data">
+    <div class="form-container">
+      <div class="form-left">
+        <form (ngSubmit)="guardar()">
+          <div>
+            <label for="descripcion">Descripción:</label>
+            <input id="descripcion" type="text" [(ngModel)]="aula.auldescripcion" name="descripcion" />
+          </div>
+        </form>
+      </div>
+      <div class="form-right">
+
+      </div>
+    </div>
+    <button class="btn-guardar" (click)="guardar()">Guardar</button>
+  
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Listado Aulas</h3>
+          <i class="bx bx-search"></i>
+          <i class="bx bx-filter"></i>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th *ngFor="let column of displayedColumns">{{ column }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let aula of dataSource">
+              <td>{{ aula.auldescripcion }}</td>
+              <td>
+                <button class="btn-editar" (click)="guardar()">Editar</button>
+                <button class="btn-eliminar" (click)="guardar()">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
