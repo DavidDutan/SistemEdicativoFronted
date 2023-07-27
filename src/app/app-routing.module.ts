@@ -17,6 +17,7 @@ import { RecuperacionContraseniaComponent } from './pages/Autentificacion/recupe
 import { DocenteUsuarioComponent } from './pages/Usuarios/docente-usuario/docente-usuario.component';
 import { EdificioComponent } from './pages/Espacios/edificio/edificio.component';
 import { AulaComponent } from './pages/Espacios/aula/aula.component';
+import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/sistema-confg.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
           {path: "gestion-asignaturas", component: GestionAsignaturasComponent}, 
           {path: "registro-horarios", component: RegistroHorariosComponent},
           {path: "registro-aula", component: AulaComponent},
-          {path: "registro-edificio", component: EdificioComponent}
+          {path: "registro-edificio", component: EdificioComponent},
+          {path: "configuracion", component: SistemaConfgComponent}
          ]
   },
   {path: "estudiante", component: EstudianteUsuarioComponent, 
