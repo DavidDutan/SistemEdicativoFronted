@@ -20,6 +20,7 @@ import { AulaComponent } from './pages/Espacios/aula/aula.component';
 import { SistemaConfgComponent } from './pages/Configuracion/sistema-confg/sistema-confg.component';
 import { GeneracionReportesComponent } from './pages/Reportes/generacion-reportes/generacion-reportes.component';
 import { PerfilUsuarioComponent } from './pages/Usuarios/perfil-usuario/perfil-usuario.component';
+import { EmpleadoUsuarioComponent } from './pages/Usuarios/empleado-usuario/empleado-usuario.component';
 
 const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
@@ -43,14 +44,17 @@ const routes: Routes = [
   {path: "estudiante", component: EstudianteUsuarioComponent, 
          children:[
           {path: "consulta-calificaciones", component: ConsultaCalificacionesComponent},
-          {path: "consulta-certificados", component: ConsultaCertificadosComponent}
+          {path: "consulta-certificados", component: ConsultaCertificadosComponent},
+          {path: "configuracion", component: SistemaConfgComponent}
          ]
   },
   {path: "docente", component: DocenteUsuarioComponent, 
          children:[
           {path: "registro-calificaciones", component: RegistroCalifiacionesComponent},
+          {path: "configuracion", component: SistemaConfgComponent}
          ]
   },
+  {path: "empleado", component: EmpleadoUsuarioComponent}
 ];
 
 @NgModule({

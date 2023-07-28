@@ -16,7 +16,7 @@
         <span class="text">Docentes</span>
       </a>
     </li>
-    <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-grupos' }">
+    <li *ngIf="perfilAcceso === 'Em'" [ngClass]="{ active: activeLink === 'gestion-grupos' }">
       <a (click)="showComponent('gestion-grupos')">
         <i class='bx bxs-group' ></i>
         <span class="text">Grupos</span>
