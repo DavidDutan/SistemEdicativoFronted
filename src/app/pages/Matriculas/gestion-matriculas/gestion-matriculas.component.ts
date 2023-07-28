@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { EstudianteService } from 'src/app/service/estudiante.service';
 import { MatriculaService } from 'src/app/service/matricula.service';
+import { Estudiante } from 'src/domain/Estudiante';
 import { Matricula } from 'src/domain/Matricula';
 
 @Component({
@@ -11,23 +13,26 @@ import { Matricula } from 'src/domain/Matricula';
 export class GestionMatriculasComponent {
 
   lstMatriculas = new Array()
+  lstEstudiantes = new Array()
 
   dataSource: Matricula[] = []; 
 
-  displayedColumns: string[] = ['Nombre', 'Apellido', 'Correo', 'Cedula', 'Perfil Acceso', 'Grado Academico', 'Id Estudiante', 'Acciones'];
+  displayedColumns: string[] = ['Nombre', 'Apellido', 'Correo', 'Cedula', 'Perfil Acceso', 'Grado Academico', 'Id Estudiante', 'Tipo', 'Fecha','Acciones'];
 
   matricula: Matricula = new Matricula()
+  estudiante: Estudiante = new Estudiante()
 
   matriculas:any
 
-  constructor(private router: Router, private matriculaService: MatriculaService ) {}
+  constructor(private router: Router, private matriculaService: MatriculaService, private estudianteService: EstudianteService ) {}
 
   ngOnInit(): void {
     this.loadEstudiantes()
+    this.loadMatriculas()
   }
 
-  loadEstudiantes(){
-    this.matriculas = this.matriculaService.getAllEstudiantes()
+  loadMatriculas(){
+    this.matriculas = this.matriculaService.getAllMatriculas()
     console.log(this.matricula)
     this.matriculas.subscribe((data: any) => {
       console.log("data", data)
@@ -37,16 +42,24 @@ export class GestionMatriculasComponent {
 
   guardar(){
     console.log(this.matricula)
+    this.matricula.matEliminado = false
     this.matriculaService.save(this.matricula).subscribe(data =>{
       console.log(data)
-      this.loadEstudiantes()
+      this.loadMatriculas()
       this.limpiar()
     })
   }
 
+  loadEstudiantes() {
+    this.estudianteService.getAllEstudiantes().subscribe((data: any) => {
+      this.lstEstudiantes = data;
+    });
+  }
+
+
   limpiar(){
-    this.matricula.mat_tipo="";
-    this.matricula.mat_fecha="";
-    this.matricula.estudiante=0n;
+    this.matricula.matTipo="";
+    this.matricula.matFecha="";
+    this.matricula.estudiante=undefined;
   }
 }

@@ -26,8 +26,10 @@
                 <input id="cedula" type="text" [(ngModel)]="estudiante.usuCedula" name="cedula">
               </div>
               <div>
-                <label for="perfil">Perfil de Acceso:</label>
-                <input id="perfil" type="text" [(ngModel)]="estudiante.usuPerfilAcceso" name="perfil">
+                <label for="perfilAcceso">Perfil de Acceso:</label>
+                <select id="perfilAcceso" name="perfilAcceso" required [(ngModel)]="estudiante.usuPerfilAcceso">
+                  <option value="Es">Estudiante</option>
+                </select>
               </div>
               <div>
                 <label for="grado">Grado Académico:</label>

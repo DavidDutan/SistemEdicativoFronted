@@ -44,11 +44,18 @@ export class GestionDocentesComponent {
     })
   }
 
-  editar(docente: Docente){
-    this.docente = { ...docente };
+  editar(){
+    console.log(this.docente)
+    this.docenteService.actualizar(this.docente).subscribe(data =>{
+      console.log(data)
+      this.loadDocentes()
+      this.limpiar()
+    })
   }
 
-  
+  cargar(docente: Docente){
+    this.docente = { ...docente };
+  }
   eliminar(){
 
   }

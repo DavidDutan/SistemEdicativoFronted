@@ -36,7 +36,7 @@
       </div>
     </div>
     <button class="btn-guardar" (click)="guardar()">Guardar</button>
-    <button class="btn-editar" (click)="editar(docente)">Editar</button>
+    <button class="btn-editar" (click)="editar()">Editar</button>
   <div class="table-data">
       <div class="order">
           <div class="head">
@@ -60,7 +60,7 @@
                       <td>{{docente.proEspecialidad}}</td>
                       <td>{{docente.usuId}}</td>
                       <td>
-                        <button  class="btn-editar" (click)="editar(docente)">Editar</button>
+                        <button  class="btn-editar" (click)="cargar(docente)">Editar</button>
                         <button  class="btn-eliminar" (click)="eliminar()">Eliminar</button>
                       </td>
                   </tr>

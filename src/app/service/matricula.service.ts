@@ -14,7 +14,7 @@ export class MatriculaService {
       return this.http.post<any>('http://localhost:8080/matricula/registrar', matricula)
   }
 
-  getAllEstudiantes(): Observable<any[]>{
+  getAllMatriculas(): Observable<any[]>{
     return this.http.get<any>('http://localhost:8080/matricula/listar')
   }
 }

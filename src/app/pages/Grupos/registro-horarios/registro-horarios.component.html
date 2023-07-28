@@ -30,8 +30,10 @@
           />
         </div>
         <div>
-          <label for="aula">Aula:</label>
-          <input id="id" type="text" [(ngModel)]="horario.aulas" name="aula" />
+          <label for="asignatura">Aula:</label>
+          <select id="asignatura" [(ngModel)]="horario.aula" name="asignatura">
+            <option *ngFor="let aula of lstAulas" [ngValue]="aula">{{ aula.auldescripcion }}</option>
+          </select>
         </div>
       </form>
     </div>
@@ -39,7 +41,7 @@
       <div>
         <label for="asignatura">Asignatura:</label>
         <select id="asignatura" [(ngModel)]="horario.grupoAsignaturas" name="asignatura">
-          <option *ngFor="let asignatura of lstAsignaturas" [value]="asignatura">{{ asignatura.asigNombre }}</option>
+          <option *ngFor="let asignatura of lstAsignaturas" [ngValue]="asignatura">{{ asignatura.asigNombre }}</option>
         </select>
       </div>
     </div>
@@ -64,7 +66,7 @@
             <td>{{ horario.horDia }}</td>
             <td>{{ horario.horHoraEntrada }}</td>
             <td>{{ horario.horHoraSalida }}</td>
-            <td>{{ horario.aulas }}</td>
+            <td>{{ horario.aula?.auldescripcion }}</td>
             <td>{{ horario.grupoAsignaturas }}</td>
             <td>{{ horario.horId }}</td>
             <td>

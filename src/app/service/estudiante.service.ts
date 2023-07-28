@@ -17,4 +17,9 @@ export class EstudianteService {
   getAllEstudiantes(): Observable<any[]>{
     return this.http.get<any>('http://localhost:8080/estudiantes/listar')
   }
+
+
+  actualizar(estudiante: Estudiante): Observable<any[]> {
+    return this.http.patch<any>('http://localhost:8080/estudiantes/actualizar', estudiante)
+  }
 }

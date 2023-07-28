@@ -1,6 +1,9 @@
+import { Estudiante } from "./Estudiante";
+
 export class Matricula {
-    mat_id?: BigInt;
-    mat_tipo?: string;
-    mat_fecha?: string;
-    estudiante?: BigInt;
+    matId?: BigInt;
+    matTipo?: string;
+    matFecha?: string;
+    matEliminado?: boolean;
+    estudiante?: Estudiante;
 }

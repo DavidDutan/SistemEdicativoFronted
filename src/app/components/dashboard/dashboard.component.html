@@ -6,49 +6,49 @@
   <ul class="side-menu top">
     <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-estudiantes' }">
       <a (click)="showComponent('gestion-estudiantes')">
-        <i class="bx bxs-shopping-bag-alt"></i>
+        <i class='bx bx-user'></i>
         <span class="text">Estudiantes</span>
       </a>
     </li>
     <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-docentes' }">
       <a (click)="showComponent('gestion-docentes')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bxs-user-badge'></i>
         <span class="text">Docentes</span>
       </a>
     </li>
     <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-grupos' }">
       <a (click)="showComponent('gestion-grupos')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bxs-group' ></i>
         <span class="text">Grupos</span>
       </a>
     </li>
     <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-matriculas' }">
       <a (click)="showComponent('gestion-matriculas')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bx-add-to-queue'></i>
         <span class="text">Matriculas</span>
       </a>
     </li>
     <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'gestion-asignaturas' }">
       <a (click)="showComponent('gestion-asignaturas')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bxs-book-bookmark' ></i>
         <span class="text">Asignaturas</span>
       </a>
     </li>
     <li *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'registro-horarios' }">
       <a (click)="showComponent('registro-horarios')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bx-calendar'></i>
         <span class="text">Horarios</span>
       </a>
     </li>
     <li *ngIf="perfilAcceso === 'Es'" [ngClass]="{ active: activeLink === 'consulta-calificaciones' }">
       <a (click)="showComponent('consulta-calificaciones')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bxs-edit-alt'></i>
         <span class="text">Calificaciones</span>
       </a>
     </li>
     <li  *ngIf="perfilAcceso === 'Ad'" [ngClass]="{ active: activeLink === 'perfil-usuario' }">
       <a (click)="showComponent('perfil-usuario')">
-        <i class="bx bxs-cog"></i>
+        <i class='bx bxs-user-detail'></i>
         <span class="text">Perfiles</span>
       </a>
     </li>
@@ -60,7 +60,7 @@
     </li>
     <li *ngIf="perfilAcceso === 'Do'" [ngClass]="{ active: activeLink === 'registro-calificaciones' }">
       <a (click)="showComponent('registro-calificaciones')">
-        <i class="bx bxs-doughnut-chart"></i>
+        <i class='bx bxs-edit-alt'></i>
         <span class="text">Calificaciones</span>
       </a>
     </li>

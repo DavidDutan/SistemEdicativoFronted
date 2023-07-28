@@ -4,18 +4,20 @@
           <form (ngSubmit)="guardar()">
             <div>
               <label for="tipo">Tipo:</label>
-              <input id="tipo" type="text" [(ngModel)]="matricula.mat_tipo" name="tipo">
+              <input id="tipo" type="text" [(ngModel)]="matricula.matTipo" name="tipo">
             </div>
             <div>
               <label for="fecha">Fecha:</label>
-              <input id="fecha" type="text" [(ngModel)]="matricula.mat_fecha" name="fecha">
+              <input id="fecha" type="date" [(ngModel)]="matricula.matFecha" name="fecha">
             </div>
           </form>
         </div>
         <div class="form-right">
           <div>
             <label for="estudiante">Estudiante:</label>
-            <input id="estudiante" type="text" [(ngModel)]="matricula.estudiante" name="estudiante">
+            <select id="estudiante" [(ngModel)]="matricula.estudiante" name="estudiante">
+              <option *ngFor="let estudiante of lstEstudiantes" [ngValue]="estudiante">{{ estudiante.usuNombre }}</option>
+            </select>
           </div>
         </div>
       </div>
@@ -36,9 +38,15 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let matricula of dataSource">
-                        <td>{{matricula.mat_tipo}}</td>
-                        <td>{{matricula.mat_fecha}}</td>
-                        <td>{{matricula.estudiante}}</td>
+                        <td>{{matricula.estudiante?.usuNombre}}</td>
+                        <td>{{matricula.estudiante?.usuApellido}}</td>
+                        <td>{{matricula.estudiante?.usuCorreo}}</td>
+                        <td>{{matricula.estudiante?.usuCedula}}</td>
+                        <td>{{matricula.estudiante?.usuPerfilAcceso}}</td>
+                        <td>{{matricula.estudiante?.estGradoAcademico}}</td>
+                        <td>{{matricula.estudiante?.usuId}}</td>
+                        <td>{{matricula.matTipo}}</td>
+                        <td>{{matricula.matFecha}}</td>
                         <td>
                             <button  class="btn-editar" (click)="guardar()">Editar</button>
                             <button  class="btn-eliminar" (click)="guardar()">Eliminar</button>

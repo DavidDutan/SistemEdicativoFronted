@@ -4,6 +4,8 @@ import { Horario } from 'src/domain/Horario';
 import { Router } from '@angular/router';
 import { AsignaturaService } from 'src/app/service/asignatura.service';
 import { Asignatura } from 'src/domain/Asignatura';
+import { Aula } from 'src/domain/Aula';
+import { AulaService } from 'src/app/service/aula.service';
 
 @Component({
   selector: 'app-registro-horarios',
@@ -13,7 +15,7 @@ import { Asignatura } from 'src/domain/Asignatura';
 export class RegistroHorariosComponent {
 
   lstHorarios = new Array()
-
+  lstAulas = new Array()
   lstAsignaturas = new Array()
 
   dataSource: Horario[] = []; 
@@ -23,14 +25,16 @@ export class RegistroHorariosComponent {
   horario: Horario = new Horario()
 
   asignatura: Asignatura = new Asignatura()
+  aula: Aula= new Aula()
 
   horarios:any
 
-  constructor(private router: Router, private horarioService: HorarioService, private asignaturaService: AsignaturaService) {}
+  constructor(private router: Router, private horarioService: HorarioService, private asignaturaService: AsignaturaService, private aulaService: AulaService) {}
 
   ngOnInit(): void {
     this.loadHorarios()
     this.loadAsignaturas()
+    this.loadAulas()
   }
 
   loadHorarios(){
@@ -48,6 +52,12 @@ export class RegistroHorariosComponent {
     });
   }
 
+  loadAulas() {
+    this.aulaService.getAllAulas().subscribe((data: any) => {
+      this.lstAulas = data;
+    });
+  }
+
   guardar(){
     console.log(this.horario)
     this.horario.grupoAsignaturas = this.asignatura.asigId
@@ -62,7 +72,7 @@ export class RegistroHorariosComponent {
     this.horario.horDia="";
     this.horario.horHoraEntrada="";
     this.horario.horHoraSalida="";
-    this.horario.aulas=undefined;
+    this.horario.aula=undefined;
     this.horario.grupoAsignaturas=undefined;
   }
 

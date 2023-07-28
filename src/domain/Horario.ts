@@ -1,8 +1,10 @@
+import { Aula } from "./Aula";
+
 export class Horario {
     horId?: BigInt;
     horDia?: string;
     horHoraEntrada?: string;
     horHoraSalida?: string;
-    aulas?: BigInt;
+    aula?: Aula;
     grupoAsignaturas?: BigInt;
 }
